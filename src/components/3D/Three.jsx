@@ -4,6 +4,8 @@ import Wave from './Wave/Wave';
 import Name from './Name/Name';
 import Loader from './Loader';
 import Woman from './Woman';
+import Stars from './Star/Stars';
+import { OrbitControls } from '@react-three/drei';
 
 const Three = () => {
     return (
@@ -15,6 +17,7 @@ const Three = () => {
             position={[-5, 5, 5]} 
             intensity={5}
           />
+          <Stars />
           <Name text='SHIHAB SARAR' position={[-0.3, 0.3, 2]} rotation={[0, Math.PI / 13.5, 0]} scale={[0.1, 0.1, 0.1]} />
           <Wave />
           <Suspense fallback={<Loader />}>
