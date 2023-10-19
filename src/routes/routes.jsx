@@ -3,6 +3,7 @@ import App from '../App';
 import Scene from '../components/3D/Scene';
 import NoPageFound from '../components/NoPageFound';
 import Home from '../components/Home';
+import About from '../components/About';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: '/home',
         element: <div><Scene /><Home /></div>
+      },
+      {
+        path: '/about',
+        element: <About />
       },
       {
         path: '*',

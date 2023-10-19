@@ -10,8 +10,8 @@ const Scene = () => {
           </div>
           <h1 className='absolute top-[25rem] left-60 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/>
                 Perferendis magnam expedita omnis quae magni maxime rem saepe possimus? Voluptas, quibusdam.</h1>
-          <h1 className='text-center w-full absolute top-[35rem] text-white'>Dive into my story ... </h1>
-          <div className='w-full h-14 absolute top-[38rem] backdrop-blur'></div>
+          <h1 className='text-center w-full absolute top-[35rem] text-white'>Dive into my story ...</h1>
+          <div className='w-full h-20 absolute top-[38rem] backdrop-blur'></div>
         </section>
       </div>
     );
