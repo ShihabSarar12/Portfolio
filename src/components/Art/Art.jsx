@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Carousel from '../Carousel';
 import './Art.css';
+import Text from '../Text';
 
 const Art = () => {
     const slides = [
@@ -33,7 +34,7 @@ const Art = () => {
                 </Carousel>
             </div>
             <div className='flex flex-col justify-center w-full p-16 font-semibold text-3xl text-white gap-5 z-10'>
-                <h1>Hi I am Shihab Sarar ...</h1>
+                <h1>Hi I am <Text text='Shihab Sarar ...' textSize='text-3xl' /></h1>
                 <p className='text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet commodi, nobis cum possimus asperiores eius nemo nesciunt. Consequuntur, quis?</p>
                 <button className='w-44 text-xl p-4 bg-slate-700 border-2 border-slate-800 hover:bg-slate-600 rounded-full active:bg-slate-900'>Contact Me</button>
             </div>

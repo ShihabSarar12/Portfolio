@@ -7,7 +7,7 @@ const Skill = () => {
         //TODO: Complete Skills section
         <section id='skill_section' className='w-screen h-screen p-8 overflow-hidden'>
             <div className='m-10'>
-                <h1 className='text-xl font-semibold text-white'>Skills</h1>
+                <h1 className='text-xl font-semibold text-white'>Mother Tongue</h1>
             </div>
             <div className='w-full h-full relative z-20'>
                 <SkillCard left='5rem' name='ReactJS' image='react_logo.png' topColor='#01D8FF' bottomColor='#013038'/>
