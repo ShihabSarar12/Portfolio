@@ -1,0 +1,63 @@
+/* TODO change background to an appropriate one darker one as it is night. */
+#skill_section{
+    background: url('../assets/extras/skill_background.jpg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.bubbles img{
+    animation: bubble 7s linear infinite;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-95vh);
+        opacity: 0;
+    }
+}
+
+.bubbles img:nth-child(1) {
+    animation-delay: 2s;
+    width: 25px;
+    height: 25px;
+}
+.bubbles img:nth-child(2) {
+    animation-delay: 1s;
+    width: 35px;
+    height: 35px;
+}
+.bubbles img:nth-child(3) {
+    animation-delay: 3s;
+    width: 50px;
+    height: 50px;
+}
+.bubbles img:nth-child(4) {
+    animation-delay: 4.5s;
+    width: 20px;
+    height: 20px;
+}
+.bubbles img:nth-child(5) {
+    animation-delay: 3s;
+    width: 30px;
+    height: 30px;
+}
+.bubbles img:nth-child(6) {
+    animation-delay: 6s;
+    width: 50px;
+    height: 50px;
+}
+.bubbles img:nth-child(7) {
+    animation-delay: 7s;
+    width: 40px;
+    height: 40px;
+}

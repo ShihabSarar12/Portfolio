@@ -31,13 +31,11 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 300
                     {
                         slides.map((_, index) =>(
                             <div
-                                className={`transition-all w-3 h-3 bg-white rounded-full ${current === index ? 'p-2' : 'bg-opacity-50'}`} 
+                                className={`transition-all w-3 h-3 bg-white rounded-full ${current === index ? 'p-2' : 'bg-opacity-50'}`}
                             />
                         ))
                     }
-
                 </div>
-                
             </div>
         </div>
     );

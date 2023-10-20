@@ -1,5 +1,5 @@
 import React from 'react';
-import Art from './Art';
+import Art from './Art/Art';
 
 const About = () => {
     //TODO: Education section
