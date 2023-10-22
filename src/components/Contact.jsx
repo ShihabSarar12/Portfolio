@@ -1,12 +1,17 @@
-import React from 'react';
-import Text from './Text';
+import React, { Suspense } from 'react';
+import Loader from './3D/Loader';
+import { Canvas } from '@react-three/fiber';
+import Stars from './3D/Star/Stars';
 
 const Contact = () => {
     return (
         <section className='bg-black w-screen h-screen p-5'>
-            <div className='m-24'>
-                <Text text='HI I am Shihab ...'/>
-            </div>
+        <Canvas>
+            <Suspense fallback={<Loader />}>
+                <Stars size={0.04} color='#00AAFF' animate={true} />
+            </Suspense>
+            <ambientLight />
+        </Canvas>
         </section>
     );
 };

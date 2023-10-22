@@ -17,8 +17,7 @@ const Three = () => {
             position={[-5, 5, 5]} 
             intensity={5}
           />
-          {/*TODO Have to fix stars */}
-          <Stars />
+          <Stars size={0.02} color='#FFFFFF' />
           {/*TODO Have to animate name */}
           <Name text='SHIHAB SARAR' position={[-0.3, 0.3, 2]} rotation={[0, Math.PI / 13.5, 0]} scale={[0.1, 0.1, 0.1]} />
           <Wave />

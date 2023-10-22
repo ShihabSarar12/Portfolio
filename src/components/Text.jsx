@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const Text = ({ text, textSize }) => {
-    //TODO: have to shorten the size taken by <Text />
+    //TODO: have to work for multiple components
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     useEffect(() =>{
         let interval = null;
