@@ -1,24 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Text = ({ text, textSize }) => {
     //TODO: have to work for multiple components
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const hackerText = useRef();
     useEffect(() =>{
         let interval = null;
-        const hackerText = document.querySelector('.hackerText');
-        hackerText.onmouseover = (event) =>{
+        hackerText.current.onmouseover = (event) =>{
             let iteration = 0;
+            console.log(event.target.dataset);
+            
             clearInterval(interval);
             interval = setInterval(() =>{
                 event.target.innerText = event.target.innerText
-                .split('')
-                .map((letter, index) =>{
-                    if(index < iteration){
-                        return event.target.dataset.value[index];
-                    }
-                    return letters[Math.floor(Math.random() * 26)];
-                })
-                .join('');
+                                            .split('')
+                                            .map((letter, index) =>{
+                                                if(index < iteration){
+                                                    return event.target.dataset.value[index];
+                                                }
+                                                return letters[Math.floor(Math.random() * 26)];
+                                            })
+                                            .join('');
                 if(iteration >= event.target.dataset.value.length){
                     clearInterval(interval);
                 }
@@ -27,7 +29,7 @@ const Text = ({ text, textSize }) => {
         }
     },[]);
     return (
-        <h1 data-value={ text } className={`hackerText ${ textSize } font-bold text-white`}>
+        <h1 ref={hackerText} data-value={ text } className={`hackerText ${ textSize } font-bold text-white`}>
             { text }
         </h1>
     );
