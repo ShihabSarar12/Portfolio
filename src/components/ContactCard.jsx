@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Text from './Text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {
     faWhatsapp,
     faFacebookMessenger,
@@ -14,6 +14,15 @@ const ContactCard = ({
     name,
     message,
 }) => {
+    const medium = useMemo(() => {
+        if (envelop) {
+            return 'mailto:shihabsararchamok@gmail.com';
+        } else if (messenger) {
+            return 'https://m.me/Shihab.sarar.1201';
+        } else if (whatsapp) {
+            return 'https://wa.me/1788667080';
+        }
+    }, [messenger, whatsapp, envelop]);
     return (
         <div className='flex flex-col justify-space bg-slate-900/40 rounded-2xl h-1/3 w-full p-5 backdrop-blur-sm'>
             {envelop && (
@@ -29,7 +38,7 @@ const ContactCard = ({
                     icon={faWhatsapp}
                     bounce
                     size='2xl'
-                    style={{ color: '#ffffff' }}
+                    style={{ color: '#FFFFFF' }}
                 />
             )}
             {messenger && (
@@ -37,18 +46,32 @@ const ContactCard = ({
                     icon={faFacebookMessenger}
                     bounce
                     size='2xl'
-                    style={{ color: '#ffffff' }}
+                    style={{ color: '#FFFFFF' }}
                 />
             )}
             <h1 className='text-2xl text-white font-semibold text-center'>
                 {name}
             </h1>
-            <Text
-                text={message}
-                textSize='text-2xl'
-                textCenter={true}
-                textColor='text-slate-100'
-            />
+            <a
+                className='flex justify-center items-center gap-5 cursor-pointer'
+                href={medium}
+                target='_blank'
+                rel='noreferrer'
+            >
+                <Text
+                    text={message}
+                    textSize='text-2xl'
+                    textCenter={true}
+                    textColor='text-slate-400'
+                />
+                <div>
+                    <FontAwesomeIcon
+                        icon={faChevronRight}
+                        size='lg'
+                        style={{ color: '#FFFFFF' }}
+                    />
+                </div>
+            </a>
         </div>
     );
 };

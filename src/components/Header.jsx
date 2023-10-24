@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Text from './Text';
 
 const Header = () => {
     return (
@@ -8,10 +9,46 @@ const Header = () => {
                 <Link to='/'>Shihab Sarar</Link>
             </div>
             <div className='text-lg font-bold text-white w-2/6 flex justify-between'>
-                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'><NavLink to='/' className={({ isActive, isPending }) => isActive ? 'text-blue-500' : ''}>Home</NavLink></button>
-                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'><NavLink to='/about' className={({ isActive, isPending }) => isActive ? 'text-blue-500' : ''}>About</NavLink></button>
-                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'><NavLink to='/projects' className={({ isActive, isPending }) => isActive ? 'text-blue-500' : ''}>Projects</NavLink></button>
-                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'><NavLink to='/contact' className={({ isActive, isPending }) => isActive ? 'text-blue-500' : ''}>Contact</NavLink></button>
+                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'>
+                    <NavLink
+                        to='/'
+                        className={({ isActive }) =>
+                            isActive ? 'text-blue-500' : ''
+                        }
+                    >
+                        <Text text='HOME' colorDefined={true} />
+                    </NavLink>
+                </button>
+                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'>
+                    <NavLink
+                        to='/about'
+                        className={({ isActive }) =>
+                            isActive ? 'text-blue-500' : ''
+                        }
+                    >
+                        <Text text='ABOUT' colorDefined={true} />
+                    </NavLink>
+                </button>
+                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'>
+                    <NavLink
+                        to='/projects'
+                        className={({ isActive }) =>
+                            isActive ? 'text-blue-500' : ''
+                        }
+                    >
+                        <Text text='PROJECTS' colorDefined={true} />
+                    </NavLink>
+                </button>
+                <button className='rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'>
+                    <NavLink
+                        to='/contact'
+                        className={({ isActive }) =>
+                            isActive ? 'text-blue-500' : ''
+                        }
+                    >
+                        <Text text='CONTACT' colorDefined={true} />
+                    </NavLink>
+                </button>
             </div>
         </div>
     );

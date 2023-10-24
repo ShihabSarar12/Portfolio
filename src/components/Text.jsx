@@ -5,6 +5,7 @@ const Text = ({
     textSize,
     textCenter = false,
     textColor = 'text-white',
+    colorDefined = false,
 }) => {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const hackerText = useRef();
@@ -12,7 +13,6 @@ const Text = ({
         let interval = null;
         hackerText.current.onmouseover = (event) => {
             let iteration = 0;
-            console.log(event.target.dataset);
 
             clearInterval(interval);
             interval = setInterval(() => {
@@ -36,9 +36,9 @@ const Text = ({
         <h1
             ref={hackerText}
             data-value={text}
-            className={`hackerText ${textSize} font-bold ${textColor} ${
-                textCenter ? 'text-center' : ''
-            }`}
+            className={`hackerText ${textSize} font-bold ${
+                colorDefined ? '' : textColor
+            } ${textCenter ? 'text-center' : ''}`}
         >
             {text}
         </h1>

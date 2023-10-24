@@ -15,7 +15,7 @@ const Contact = () => {
                 <ambientLight />
             </Canvas>
             <div className='absolute left-0 top-0 w-full h-full bg-transparent p-16'>
-                <div className='mb-5'>
+                <div className='mb-3'>
                     <Text text='Contact' textSize='text-3xl' />
                 </div>
                 <div className='flex flex-col w-5/12 h-full gap-3'>
