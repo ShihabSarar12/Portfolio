@@ -15,7 +15,6 @@ const Three = () => {
                 <ambientLight />
                 <directionalLight position={[-5, 5, 5]} intensity={5} />
                 <Stars size={0.02} color='#FFFFFF' />
-                {/*TODO Have to animate name */}
                 <Name
                     text='SHIHAB SARAR'
                     position={[-0.3, 0.3, 2]}

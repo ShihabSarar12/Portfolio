@@ -53,7 +53,7 @@ const ContactCard = ({
                 {name}
             </h1>
             <a
-                className='flex justify-center items-center gap-5 cursor-pointer'
+                className='group relative flex justify-center items-center cursor-pointer'
                 href={medium}
                 target='_blank'
                 rel='noreferrer'
@@ -64,7 +64,7 @@ const ContactCard = ({
                     textCenter={true}
                     textColor='text-slate-400'
                 />
-                <div>
+                <div className='h-full absolute right-5 top-0 flex justify-center items-center group-hover:translate-x-3 transition-all duration-500 ease-in-out'>
                     <FontAwesomeIcon
                         icon={faChevronRight}
                         size='lg'

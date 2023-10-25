@@ -9,6 +9,7 @@ const Woman = (props) => {
     useEffect(() => {
         actions['Idle'].reset().fadeIn(0.5).play();
     }, [actions]);
+
     return (
         <group ref={group} {...props} dispose={null}>
             <group name='Scene'>
