@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import SkillCard from '../SkillCard/SkillCard';
+import { skillCardProps } from './SkillCardProps';
+import Text from '../Text';
 import './Skill.css';
 
 const Skill = () => {
@@ -43,12 +45,10 @@ const Skill = () => {
         //TODO: Complete Skills section
         <section
             id='skill_section'
-            className='w-screen h-screen p-8 overflow-hidden'
+            className='p-8 overflow-hidden w-screen h-screen'
         >
             <div className='m-10'>
-                <h1 className='text-xl font-semibold text-white'>
-                    Mother Tongue
-                </h1>
+                <Text text='Mother Tongue' textSize='text-2xl' />
             </div>
             <div className='w-full h-full z-10 relative'>
                 <div
@@ -63,63 +63,18 @@ const Skill = () => {
                     data-mouse-down-at='0'
                     data-prev-percentage='0'
                 >
-                    <SkillCard
-                        name='ReactJS'
-                        image='react_logo.png'
-                        topColor='#01D8FF'
-                        bottomColor='#013038'
-                    />
-                    <SkillCard
-                        delay='0.5s'
-                        name='HTML'
-                        image='html_logo.png'
-                        topColor='#E34F26'
-                        bottomColor='#361208'
-                    />
-                    <SkillCard
-                        delay='1s'
-                        name='CSS'
-                        image='css_logo.png'
-                        topColor='#264DE4'
-                        bottomColor='#0E1C52'
-                    />
-                    <SkillCard
-                        delay='1.5s'
-                        name='Javascript'
-                        image='javascipt_logo.png'
-                        topColor='#f0DB4F'
-                        bottomColor='#7D722A'
-                    />
-                    <SkillCard
-                        delay='2s'
-                        name='Tailwind CSS'
-                        image='tailwind_logo.png'
-                        topColor='#38BDF8'
-                        bottomColor='#15485E'
-                    />
-                    <SkillCard
-                        delay='2.5s'
-                        name='Tailwind CSS'
-                        image='tailwind_logo.png'
-                        topColor='#38BDF8'
-                        bottomColor='#15485E'
-                    />
-                    <SkillCard
-                        delay='3s'
-                        name='Tailwind CSS'
-                        image='tailwind_logo.png'
-                        topColor='#38BDF8'
-                        bottomColor='#15485E'
-                    />
+                    {skillCardProps.map((data, index) => {
+                        return <SkillCard key={index} {...data} />;
+                    })}
                 </div>
             </div>
             <div className='relative'>
                 <div className='w-full bubbles z-20 absolute flex justify-around bottom-0'>
-                    {imgBubble.map((value) => {
+                    {imgBubble.map((value, index) => {
                         return (
                             <img
                                 className='pointer-events-none'
-                                key={value}
+                                key={index}
                                 src={require('../assets/extras/bubble.png')}
                                 alt='bubble'
                                 draggable={false}
