@@ -53,7 +53,7 @@ const Art = () => {
             </div>
             <div
                 id='mouse_blob'
-                className='w-80 h-80 bg-white absolute top-1/2 left-1/2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 pointer-events-none blur-3xl'
+                className='w-80 h-80 absolute top-1/2 left-1/2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 pointer-events-none blur-3xl'
             ></div>
         </div>
     );

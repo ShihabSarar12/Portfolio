@@ -4,6 +4,7 @@ import NoPageFound from '../components/NoPageFound';
 import Home from '../components/Home';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import Projects from '../components/Projects';
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
                 path: '/contact',
                 element: <Contact />,
             },
+            {
+                path: '/projects',
+                element: <Projects />
+            }
         ],
     },
 ]);

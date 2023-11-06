@@ -20,6 +20,7 @@ const Scene = () => {
                     href={picture}
                     download='picture'
                     target='_blank'
+                    rel='noreferrer'
                 >
                     <button className='p-4 bg-slate-800 hover:bg-slate-700 text-white text-xl font-semibold rounded-full'>
                         Download CV

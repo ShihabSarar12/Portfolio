@@ -27,8 +27,8 @@ const Wave = () => {
             uDeepColor: { value: new THREE.Color(waveDeepColor) },
           },
     }),[]);
-    useFrame((state, delta) =>{
-        const elapsedTime = state.clock.getElapsedTime();
+    useFrame(({ clock }) =>{
+        const elapsedTime = clock.getElapsedTime();
         plane.current.material.uniforms.uTime.value = elapsedTime;
     });
     return (

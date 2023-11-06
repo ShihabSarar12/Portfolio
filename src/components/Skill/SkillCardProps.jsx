@@ -23,7 +23,7 @@ const skillCardProps = [
     {
         delay: '1.5s',
         name: 'Javascript',
-        image: 'javascipt_logo.png',
+        image: 'javascript_logo.png',
         topColor: '#f0DB4F',
         bottomColor: '#7D722A',
     },

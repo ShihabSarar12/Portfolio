@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Text from './Text';
 
 const Header = () => {
+    
     return (
         <div className='w-screen bg-transparent fixed top-0 left-0 flex flex-row justify-between px-5 py-1 backdrop-blur-sm'>
             <div className='text-2xl font-bold text-blue-500 rounded-2xl p-2 hover:bg-slate-900 cursor-pointer'>

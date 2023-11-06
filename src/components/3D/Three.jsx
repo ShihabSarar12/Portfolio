@@ -4,8 +4,7 @@ import Wave from './Wave/Wave';
 import Name from './Name/Name';
 import Loader from './Loader';
 import Woman from './Woman';
-import Stars from './Star/Stars';
-import { Stats } from '@react-three/drei';
+import { Stars, Stats } from '@react-three/drei';
 
 const Three = () => {
     return (
@@ -14,7 +13,7 @@ const Three = () => {
                 <color attach='background' args={['#000000']} />
                 <ambientLight />
                 <directionalLight position={[-5, 5, 5]} intensity={5} />
-                <Stars size={0.02} color='#FFFFFF' />
+                <Stars depth={100} radius={250} fade={true}/>
                 <Name
                     text='SHIHAB SARAR'
                     position={[-0.3, 0.3, 2]}
@@ -38,3 +37,4 @@ const Three = () => {
 };
 
 export default Three;
+
