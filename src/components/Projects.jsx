@@ -7,7 +7,7 @@ import PointGrid from './3D/PointGrid/PointGrid';
 const Projects = () => {
     return (
         <section className='bg-black w-screen h-screen'>
-            <Canvas camera={{position: [0, 1, 8]}}>
+            <Canvas camera={{position: [-0.5, 1, 5]}}>
                 <ambientLight intensity={0.5} />
                 <pointLight position={[10, 10, 10]} />
                 <OrbitControls />
