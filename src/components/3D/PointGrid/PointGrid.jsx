@@ -4,6 +4,7 @@ import pointGridFragmentShaders from './PointGridShaders/fragment';
 import pointGridVertexShader from './PointGridShaders/vertex';
 
 const PointGrid = ({ gridSize = 20, size = 0.04, color = '#00AAFF' }) => {
+    const grid = useRef();
     const pointGrid = useRef();
     const count = useMemo(() =>{
         return gridSize * gridSize;
@@ -32,11 +33,13 @@ const PointGrid = ({ gridSize = 20, size = 0.04, color = '#00AAFF' }) => {
     }),[]);
 
     useFrame(({ clock }) =>{
-        pointGrid.current.material.uniforms.uTime.value = clock.getElapsedTime();
+        const elapsedTime = clock.getElapsedTime();
+        pointGrid.current.material.uniforms.uTime.value = elapsedTime;
+        grid.current.rotation.x += 0.006;
     })
 
     return (
-        <group >
+        <group ref={grid}>
             <points ref={pointGrid}>
                 <bufferGeometry attach='geometry'> 
                     <bufferAttribute

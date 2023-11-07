@@ -1,4 +1,4 @@
-const pointGridVertexShader = `
+const pointGridVertexShader = /*glsl*/`
 uniform float uTime;
 void main(){
     vec4 modelPosition = modelMatrix * vec4(position, 1.0);

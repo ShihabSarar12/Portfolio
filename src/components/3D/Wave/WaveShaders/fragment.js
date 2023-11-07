@@ -1,4 +1,4 @@
-const waveFragmentShader = `
+const waveFragmentShader = /*glsl*/`
 precision mediump float;
 
 uniform vec3 uSurfaceColor;

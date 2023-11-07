@@ -1,4 +1,4 @@
-const waveVertexShader = `
+const waveVertexShader = /*glsl*/`
 uniform float uTime;
 uniform float uBigWavesElevation;
 uniform vec2 uBigWavesFrequency;
