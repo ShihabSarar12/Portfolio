@@ -1,9 +1,9 @@
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import React, { useMemo, useRef } from 'react';
 import pointGridFragmentShaders from './PointGridShaders/fragment';
 import pointGridVertexShader from './PointGridShaders/vertex';
 
-const PointGrid = ({ gridSize = 20, size = 0.04, color = '#00AAFF' }) => {
+const PointGrid = ({ gridSize = 20 }) => {
     const grid = useRef();
     const pointGrid = useRef();
     const count = useMemo(() =>{
@@ -35,7 +35,7 @@ const PointGrid = ({ gridSize = 20, size = 0.04, color = '#00AAFF' }) => {
     useFrame(({ clock }) =>{
         const elapsedTime = clock.getElapsedTime();
         pointGrid.current.material.uniforms.uTime.value = elapsedTime;
-        grid.current.rotation.x += 0.006;
+        grid.current.rotation.y += 0.002;
     })
 
     return (

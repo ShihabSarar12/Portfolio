@@ -21,7 +21,7 @@ const Three = () => {
                     scale={[0.1, 0.1, 0.1]}
                 />
                 <Wave />
-                <Suspense fallback={<Loader />}>
+                {/* <Suspense fallback={<Loader />}>
                     <group
                         position={[-1, 0, 1]}
                         scale={[0.5, 0.5, 0.5]}
@@ -29,7 +29,7 @@ const Three = () => {
                     >
                         <Woman />
                     </group>
-                </Suspense>
+                </Suspense> */}
                 <Stats />
             </Canvas>
         </div>

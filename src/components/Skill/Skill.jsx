@@ -1,11 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import SkillCard from '../SkillCard/SkillCard';
 import { skillCardProps } from './SkillCardProps';
 import Text from '../Text';
 import './Skill.css';
 
 const Skill = () => {
-    const imgBubble = Array.apply(null, Array(7)).map((index) => index);
+    const imgBubble = useMemo(() =>{
+        return Array.apply(null, Array(7)).map((index) => index)
+    },[]);
     const maxDragLimit = -28;
     const track = useRef();
     const handleOnDown = (event) =>

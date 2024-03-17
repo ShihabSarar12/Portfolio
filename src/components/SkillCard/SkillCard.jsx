@@ -5,12 +5,11 @@ const SkillCard = ({ delay = 0, name, image, topColor, bottomColor }) => {
     const card = useRef();
     useEffect(() => {
         card.current.style.backgroundImage = `linear-gradient(to bottom right, ${topColor}, ${bottomColor})`;
-        card.current.style.animationDelay = delay;
-    }, [card, topColor, bottomColor, delay]);
+    }, [card, topColor, bottomColor]);
     return (
         <div
             ref={card}
-            className={`w-56 h-64 p-3 rounded-2xl card text-2xl font-semibold text-white text-center hover:scale-105 transition-all duration-300 ease-in-out`}
+            className={`w-56 h-64 p-3 rounded-2xl card text-2xl font-semibold text-white text-center`}
         >
             <img
                 className='mb-2 h-5/6'
