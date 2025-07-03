@@ -1,16 +1,19 @@
-import React from 'react';
-import Skill from './Skill/Skill';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Scene from './3D/Scene';
-
+import MotherTongue from './MotherTongue';
+import Transition from './Transition';
 
 const Home = () => {
-    //TODO: Have to animate scrolls
     return (
         <>
-            <Scene />
-            <Skill />
+            <Transition>
+                <Scene />
+            </Transition>
+            <Transition>
+                <MotherTongue />
+            </Transition>
         </>
-        //TODO: Experience section
     );
 };
 

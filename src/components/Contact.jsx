@@ -4,11 +4,21 @@ import { Canvas } from '@react-three/fiber';
 import Text from './Text';
 import Stars from './3D/Star/Stars';
 import ContactCard from './ContactCard';
+import WavingModel from './3D/WavingModel';
 
 const Contact = () => {
     return (
         <section className='relative bg-black w-screen h-screen p-5 '>
             <Canvas>
+                <Suspense fallback={<Loader />}>
+                    <group
+                        position={[3, 0, 2]}
+                        scale={[0.75, 0.75, 0.75]}
+                        rotation={[0, -Math.PI / 4, 0]}
+                    >
+                        <WavingModel />
+                    </group>
+                </Suspense>
                 <Suspense fallback={<Loader />}>
                     <Stars size={0.04} color='#00AAFF' animate={true} />
                 </Suspense>
