@@ -1,8 +1,12 @@
 /* eslint-disable no-unused-vars */
-import { motion, spring } from "framer-motion";
-import { href } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
 
 const Header = () => {
+  // toggle the menu bar for mobile device
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <header className="absolute w-full z-50 transition-all duration-300">
       <div className="container flex mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between h-16 md:h-20 mt-3">
@@ -53,7 +57,55 @@ const Header = () => {
           ))}
         </nav>
         {/* {social icons} */}
-        <div className=""></div>
+        <div className="md:flex hidden items-center space-x-4">
+          <motion.a
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.3, duration: 0.8 }}
+            className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:"
+            href="#"
+          >
+            <FiGithub className="w-5 h-5" />
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.3, duration: 0.8 }}
+            className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:"
+            href="#"
+          >
+            <FiFacebook className="w-5 h-5" />
+          </motion.a>
+
+          <motion.a
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.3, duration: 0.8 }}
+            className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:"
+            href="#"
+          >
+            <FiLinkedin className="w-5 h-5" />
+          </motion.a>
+          {/* {hire me button} */}
+
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 1.6,
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 15,
+            }}
+            className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500"
+          >
+            Hire Me
+          </motion.button>
+        </div>
+
+        {/* {mobile device menu bar} */}
       </div>
     </header>
   );
