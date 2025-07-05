@@ -162,6 +162,7 @@ const Header = () => {
           <button
             onClick={() => {
               toggleMenu();
+              openContactForm();
             }}
             className="mt-4 block w-full px-4 py-4 rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 font-bold"
           >
