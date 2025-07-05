@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiFacebook, FiMenu, FiX } from "react-icons/fi";
 
 const Header = () => {
   // toggle the menu bar for mobile device
   const [isOpen, setOpen] = useState(false);
+  const toggleMenu = () => setOpen(!isOpen);
 
   return (
     <header className="absolute w-full z-50 transition-all duration-300">
@@ -106,6 +107,19 @@ const Header = () => {
         </div>
 
         {/* {mobile device menu bar} */}
+        <div className="md:hidden flex items-center">
+          <motion.button
+            whileTap={{ scale: 0.7 }}
+            onClick={toggleMenu}
+            className="text-gray-300"
+          >
+            {isOpen ? (
+              <FiX className="h-6 w-6" />
+            ) : (
+              <FiMenu className="h-6 w-6" />
+            )}
+          </motion.button>
+        </div>
       </div>
     </header>
   );
