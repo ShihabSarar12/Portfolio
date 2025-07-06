@@ -28,14 +28,7 @@ const Header = () => {
           }}
           className="flex items-center"
         >
-          <div
-            className="h-10 w-10 rounded-xl bg-gradient-to-r from-gray-500 to-gray-100
-            flex items-center justify-center text-purple-600
-            font-bold text-xl mr-3"
-          >
-            S
-          </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
+          <span className="text-2xl font-bold lg:ml-16 bg-gradient-to-r from-gray-300 to-gray-100 bg-clip-text text-transparent">
             Shihab Sarar
           </span>
         </motion.div>
@@ -105,7 +98,7 @@ const Header = () => {
               stiffness: 100,
               damping: 15,
             }}
-            className="ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500"
+            className=" text-xl font-bold text-gray-800 dark:text-gray-200 hover:violet-600 dark:hover:text-violet-400 transition-colors duration-300"
           >
             Hire Me
           </motion.button>
