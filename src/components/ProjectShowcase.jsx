@@ -2,32 +2,32 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
-// const projects = [
-//   {
-//     title: "Sheikh Expedition",
-//     image: "/projects/hospital.png",
-//     github: "https://github.com/ShihabSarar12/SheikhExpedition",
-//     tech: ["React", "Tailwind", "MongoDB", "Node.js"],
-//   },
-//   {
-//     title: "Uni Hub",
-//     image: "/projects/ecommerce.png",
-//     github: "https://github.com/ShihabSarar12/UniHub",
-//     tech: ["Next.js", "Stripe", "Firebase"],
-//   },
-//   {
-//     title: "People Surveillance Blockchain",
-//     image: "/projects/blog.png",
-//     github: "https://github.com/ShihabSarar12/People-Surveillance-Blockchain",
-//     tech: ["Express", "MongoDB", "EJS", "Node.js"],
-//   },
-//   {
-//     title: "Smart Tech",
-//     image: "/projects/portfolio.png",
-//     github: "https://github.com/ShihabSarar12/SmartTech",
-//     tech: ["React", "Framer Motion", "TailwindCSS"],
-//   },
-// ];
+const projects = [
+  {
+    title: "Sheikh Expedition",
+    image: "/projects/hospital.png",
+    github: "https://github.com/ShihabSarar12/SheikhExpedition",
+    tech: ["React", "Tailwind", "MongoDB", "Node.js"],
+  },
+  {
+    title: "Uni Hub",
+    image: "/projects/ecommerce.png",
+    github: "https://github.com/ShihabSarar12/UniHub",
+    tech: ["Next.js", "Stripe", "Firebase"],
+  },
+  {
+    title: "People Surveillance Blockchain",
+    image: "/projects/blog.png",
+    github: "https://github.com/ShihabSarar12/People-Surveillance-Blockchain",
+    tech: ["Express", "MongoDB", "EJS", "Node.js"],
+  },
+  {
+    title: "Smart Tech",
+    image: "/projects/portfolio.png",
+    github: "https://github.com/ShihabSarar12/SmartTech",
+    tech: ["React", "Framer Motion", "TailwindCSS"],
+  },
+];
 
 export default function ProjectShowcase() {
   return (
