@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import WavingLogo from "./wavingLogo";
+import Projects from "./Projects";
 
 const Banner = () => {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-black to-[#281624] px-4 py-12 flex items-center justify-center">
+    <section className="absolute left-0 top-0 w-screen h-screen px-4 py-12 flex items-center justify-center">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start gap-10">
         {/* ✅ Logos - Top (mobile), Right (desktop) */}
         <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center md:justify-end">
