@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import WavingLogo from "./wavingLogo";
-import Projects from "./Projects";
+
+import HackerText from "./HackerText";
 
 const Banner = () => {
   return (
-    <section className="absolute left-0 top-0 w-screen h-screen px-4 py-12 flex items-center justify-center">
+    <section className="absolute top-0 left-0 w-screen h-screen px-4 py-12 flex items-center justify-center">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start gap-10">
         {/* ✅ Logos - Top (mobile), Right (desktop) */}
         <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center md:justify-end">
@@ -26,7 +27,11 @@ const Banner = () => {
             className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-snug mb-4"
           >
             Hi there 🍸 <br />
-            <span className="text-blue-400">I'm Shihab Sarar..</span>
+            <HackerText
+              textColor="text-blue-500"
+              textSize="text-5xl"
+              text="I'm Shihab Sarar"
+            />
           </motion.h1>
 
           <motion.p

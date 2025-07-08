@@ -5,13 +5,14 @@ import Projects from "./components/Projects.jsx";
 import ProjectShowcase from "./components/ProjectShowcase";
 import TechSkills from "./components/TechSkills";
 import TechTimeline from "./components/TechTimeline";
+import Three from "./components/Three.jsx";
 
 function App() {
   return (
     <>
       <div>
         <Header />
-        <Projects />
+        <Three />
         <TechTimeline />
         <ProjectShowcase />
         <CodeforcesCard />

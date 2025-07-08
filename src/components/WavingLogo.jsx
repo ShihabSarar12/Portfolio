@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useAnimationFrame } from "framer-motion";
 import logo1 from "../assets/Java.svg";
 import logo2 from "../assets/Javascripts.svg";
 import logo3 from "../assets/C++.svg";
@@ -19,28 +20,33 @@ const positions = [
 ];
 
 const WavingLogo = () => {
+  const logoRefs = useRef([]);
+
+  useAnimationFrame((t) => {
+    logoRefs.current.forEach((el, i) => {
+      if (el) {
+        const offset = i * 0.5;
+        const y = Math.sin(t / 500 + offset) * 10;
+        const x = Math.cos(t / 700 + offset) * 8;
+        el.style.transform = `translate(${x}px, ${y}px) rotate(${
+          Math.sin(t / 800 + offset) * 5
+        }deg)`;
+      }
+    });
+  });
+
   return (
     <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-visible">
       {logos.map((logo, i) => (
         <motion.img
           key={i}
+          ref={(el) => (logoRefs.current[i] = el)}
           src={logo}
           alt={`logo-${i}`}
-          className="absolute w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-30"
+          className="absolute w-14 sm:w-20 md:w-24 lg:w-28 xl:w-32 opacity-40 pointer-events-none select-none"
           initial={{ opacity: 0 }}
-          animate={{
-            rotate: [0, i % 2 === 0 ? 15 : -15, i % 2 === 0 ? -15 : 15, 0],
-            opacity: [0.3, 0.6, 1, 0.6, 0.3],
-            y: [0, -10 + i * 2, 10 - i * 2, 0],
-            x: [0, 8 - i, -8 + i, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 6 + i,
-            ease: "easeInOut",
-            delay: i * 0.8,
-          }}
+          animate={{ opacity: 0.8 }}
+          transition={{ delay: i * 0.4, duration: 1 }}
           style={{
             top: positions[i].top,
             left: positions[i].left,
