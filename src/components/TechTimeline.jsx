@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import Bubble from "./Bubble.jsx";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -13,7 +14,7 @@ import {
   FaCode,
   FaAws,
 } from "react-icons/fa";
-import { FaC } from "react-icons/fa6";
+
 import {
   SiTailwindcss,
   SiMongodb,
@@ -123,7 +124,18 @@ const iconVariant = {
 
 const TechTimeline = () => {
   return (
-    <section className="bg-gradient-to-b from-[#281624] to-black text-white py-16 px-4 relative">
+    <section className=" bg-gradient-to-b from-[#198bb8] to-black text-white py-16 px-4 relative">
+      <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-10 bg-gradient-to-b from-transparent to-[#0f0f1e]">
+        {Array.from({ length: 15 }).map((_, i) => (
+          <Bubble
+            key={i}
+            size={Math.random() * 15 + 10}
+            x={`${Math.random() * 100}%`}
+            delay={Math.random() * 4}
+          />
+        ))}
+      </div>
+
       <h2 className="text-3xl font-bold text-center mb-12">
         🧩 Development Tech ⚙️
       </h2>

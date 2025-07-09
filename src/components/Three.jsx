@@ -46,7 +46,9 @@ const Three = () => {
         <Stars depth={100} radius={250} fade={true} />
         {/* <OrbitControls /> */}
       </Canvas>
+
       <Banner />
+      <div className="relative bottom-5 w-full h-15 bg-gradient-to-t from-[#0f82b08b] to-transparent backdrop-blur-sm pointer-events-none z-20" />
     </div>
   );
 };
