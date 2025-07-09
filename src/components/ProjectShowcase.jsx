@@ -1,6 +1,8 @@
+// src/components/ProjectShowcase.jsx
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import Bubble from "./Bubble.jsx";
 
 const projects = [
   {
@@ -31,14 +33,29 @@ const projects = [
 
 export default function ProjectShowcase() {
   return (
-    <section className="py-10 px-4 sm:px-8 md:px-16 lg:px-24 bg-gradient-to-b from-black to-[#281624]">
-      <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="relative py-20 px-4 sm:px-8 md:px-16 lg:px-24 bg-gradient-to-b from-[#000000] to-[#281624] overflow-hidden text-white">
+      {/* Background Bubbles */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <Bubble
+            key={i}
+            size={Math.random() * 20 + 10}
+            x={`${Math.random() * 100}%`}
+            delay={Math.random() * 10}
+          />
+        ))}
+      </div>
+
+      <h2 className="text-3xl font-bold text-center mb-10 relative z-10">
+        Projects
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
         {projects.map((project, index) => (
           <motion.div
-            whileHover={{ scale: 1.03 }}
             key={index}
-            className="bg-[#281624] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+            whileHover={{ scale: 1.03 }}
+            className="rounded-2xl overflow-hidden backdrop-blur-md bg-white/10 border border-white/10 shadow-xl transition-all duration-300"
           >
             <div className="relative group">
               <img
@@ -63,7 +80,7 @@ export default function ProjectShowcase() {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-sm bg-gray-200 text-gray-700 px-2 py-1 rounded-full"
+                    className="text-sm bg-white/20 text-white px-2 py-1 rounded-full"
                   >
                     {tech}
                   </span>

@@ -124,8 +124,8 @@ const iconVariant = {
 
 const TechTimeline = () => {
   return (
-    <section className=" bg-gradient-to-b from-[#198bb8] to-black text-white py-16 px-4 relative">
-      <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none z-10 bg-gradient-to-b from-transparent to-[#0f0f1e]">
+    <section className=" bg-gradient-to-b from-[#198bb8] to-black text-white py-20 px-4 relative">
+      <div className="absolute bottom-0 left-0 w-full  pointer-events-none bg-gradient-to-b from-transparent to-[#0f0f1e]">
         {Array.from({ length: 15 }).map((_, i) => (
           <Bubble
             key={i}
