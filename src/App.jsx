@@ -1,23 +1,20 @@
-import Banner from "./components/Banner";
-import CodeforcesCard from "./components/CodeforcesCard";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-
-import Projects from "./components/Projects.jsx";
-import ProjectShowcase from "./components/ProjectShowcase";
-import TechSkills from "./components/TechSkills";
-import TechTimeline from "./components/TechTimeline";
-import Three from "./components/Three.jsx";
+import About from "./components/About";
+// import Projects from "./components/Projects";
+// import Contact from "./components/Contact.jsx";
+import Home from "./components/Home";
 
 function App() {
   return (
     <>
-      <div>
-        <Header />
-        <Three />
-        <TechTimeline />
-        <ProjectShowcase />
-        <CodeforcesCard />
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        {/* <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
     </>
   );
 }

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FiGithub, FiLinkedin, FiFacebook, FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import About from "./About";
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const toggleMenu = () => setOpen(!isOpen);
@@ -10,6 +11,20 @@ const Header = () => {
 
   const openContactForm = () => setContactFormOpen(true);
   const closeContactForm = () => setContactFormOpen(false);
+
+  const navVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.3 + i * 0.2,
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+      },
+    }),
+  };
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -38,13 +53,13 @@ const Header = () => {
           </span>
         </motion.div>
 
-        <nav className="lg:flex hidden space-x-8">
+        <nav className="lg:flex hidden space-x-8 ">
           {navItems.map(({ name, path }) => (
             <Link
+              className="text-white font-medium py-2 block  hover:text-violet-600"
               key={name}
               to={path}
               onClick={toggleMenu}
-              className="text-gray-300 font-medium py-2 block"
             >
               {name}
             </Link>
