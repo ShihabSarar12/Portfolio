@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FiGithub, FiLinkedin, FiFacebook, FiMenu, FiX } from "react-icons/fi";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const toggleMenu = () => setOpen(!isOpen);
@@ -10,6 +10,13 @@ const Header = () => {
 
   const openContactForm = () => setContactFormOpen(true);
   const closeContactForm = () => setContactFormOpen(false);
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <header className=" w-full sticky left-0 top-0 z-50 transition-all duration-300 backdrop-blur-md  shadow-lg">
@@ -32,23 +39,15 @@ const Header = () => {
         </motion.div>
 
         <nav className="lg:flex hidden space-x-8">
-          {["Home", "About", "Projects", "Contact"].map((item, index) => (
-            <motion.a
-              key={item}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                delay: 0.7 + index * 0.2,
-              }}
-              className="relative text-gray-800 dark:text-gray-200 hover:text-violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group"
-              href="#"
+          {navItems.map(({ name, path }) => (
+            <Link
+              key={name}
+              to={path}
+              onClick={toggleMenu}
+              className="text-gray-300 font-medium py-2 block"
             >
-              {item}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
-            </motion.a>
+              {name}
+            </Link>
           ))}
         </nav>
 
@@ -104,15 +103,15 @@ const Header = () => {
         className="md:hidden overflow-hidden backdrop-blur-sm bg-white/10 border-t border-white/10 shadow-md px-4 py-5 space-y-5 rounded-b-2xl"
       >
         <nav className="flex flex-col space-y-3">
-          {["Home", "About", "Projects", "Contact"].map((item) => (
-            <a
+          {navItems.map(({ name, path }) => (
+            <Link
+              key={name}
+              to={path}
               onClick={toggleMenu}
-              className="text-gray-300 font-medium py-2"
-              key={item}
-              href=""
+              className="text-gray-300 font-medium py-2 block"
             >
-              {item}
-            </a>
+              {name}
+            </Link>
           ))}
         </nav>
 
