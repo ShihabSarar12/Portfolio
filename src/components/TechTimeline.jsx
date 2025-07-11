@@ -124,7 +124,10 @@ const iconVariant = {
 
 const TechTimeline = () => {
   return (
-    <section className=" bg-gradient-to-b from-[#198bb8] to-black text-white py-20 px-4 relative">
+    <section
+      id="next-section"
+      className=" bg-gradient-to-b from-[#198bb8] to-black text-white py-20 px-4 relative"
+    >
       <div className="absolute bottom-0 left-0 w-full  pointer-events-none bg-gradient-to-b from-transparent to-[#0f0f1e]">
         {Array.from({ length: 15 }).map((_, i) => (
           <Bubble
@@ -195,7 +198,7 @@ const TechTimeline = () => {
             >
               {cat.items.map((tech, i) => (
                 <motion.div
-                  key={tech.name}
+                  key={i}
                   variants={iconVariant}
                   className="flex items-center gap-2 transition-all"
                 >

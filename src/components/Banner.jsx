@@ -15,7 +15,7 @@ const Banner = () => {
 
         {/* ✅ Text - Bottom (mobile), Left (desktop), Left-aligned always */}
         <div className="w-full md:w-1/2 order-2 md:order-1 text-left">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -32,7 +32,7 @@ const Banner = () => {
               textSize="text-5xl"
               text="I'm Shihab Sarar"
             />
-          </motion.h1>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 50 }}

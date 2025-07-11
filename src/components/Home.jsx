@@ -9,7 +9,6 @@ const Home = () => {
       <Three />
       <TechTimeline />
       <ProjectShowcase />
-      <CodeforcesCard />
     </div>
   );
 };
